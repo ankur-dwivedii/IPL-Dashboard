@@ -1,10 +1,15 @@
 package com.ankur.ipldashboard.controller;
 
+import java.time.LocalDate;
+import java.util.List;
+
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.ankur.ipldashboard.model.Match;
 import com.ankur.ipldashboard.model.Team;
 import com.ankur.ipldashboard.repository.MatchRepository;
 import com.ankur.ipldashboard.repository.TeamRepository;
@@ -31,5 +36,14 @@ public class TeamController {
 
         return team;
         
+    }
+
+    @GetMapping("/team/{teamName}/matches")
+    public List<Match> getMatchesForTeam(@PathVariable String teamName, @RequestParam int year){
+        // of(year, month, dayOfMonth), I want startdate as eg, 1 jan 2010 and end date as 1 jan 2011 and get matches between
+        LocalDate startDate = LocalDate.of(year, 1, 1);
+        LocalDate endDate = LocalDate.of(year+1, 1, 1);
+        return this.matchRepository.getMatchesByTeamBetweenDates(teamName, startDate, endDate);
+
     }
 }
