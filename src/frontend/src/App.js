@@ -1,4 +1,4 @@
-import "./App.css";
+import "./App.scss";
 //Importing router to route teams/teamName to TeamPage component
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { TeamPage } from "./pages/TeamPage";
