@@ -13,7 +13,7 @@ export const TeamPage = () => {
     //useEffect runs the given code if there is any change in the react
     () => {
       const fetchTeam = async () => {
-        const response = await fetch(`http://localhost:8080/team/${teamName}`);
+        const response = await fetch(`${process.env.REACT_APP_API_ROOT_URL}/team/${teamName}`);
         const data = await response.json();
         //console.log(data);
         setTeam(data);
@@ -48,7 +48,8 @@ export const TeamPage = () => {
 
       {/* slice will ignore 1st match and map will show other 3 */}
       {team.matches.slice(1).map((match) => (
-        <MatchSmallCard teamName={team.teamName} match={match} />
+        // Key is so React can differentiate between these different match small cards by match.id which is unique for every card
+        <MatchSmallCard key={match.id} teamName={team.teamName} match={match} />
       ))}
       <div className="more-link">
       <Link to={`/teams/${teamName}/matches/${process.env.REACT_APP_DATA_END_YEAR}`}>More ></Link>
