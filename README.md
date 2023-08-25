@@ -2,7 +2,8 @@
 
 Browse your favorite IPL teams and access their past games details, wins and losses ratios - accessible by team and tournament year.
 
-Link to website uploaded on AWS BeanStalk ->  http://ipldashboardv2-env.eba-n6gnuupn.eu-north-1.elasticbeanstalk.com
+Link to the website that is uploaded on AWS BeanStalk ->
+      http://ipldashboardv2-env.eba-n6gnuupn.eu-north-1.elasticbeanstalk.com
 
 ## Technologies
 
