@@ -5,6 +5,9 @@ Browse your favorite IPL teams and access their past games details, wins and los
 Link to the website that is uploaded on AWS BeanStalk ->
       http://ipldashboardv2-env.eba-n6gnuupn.eu-north-1.elasticbeanstalk.com
 
+## DataSet used is from free source Kaggle
+      https://www.kaggle.com/datasets/patrickb1912/ipl-complete-dataset-20082020?select=IPL+Matches+2008-2020.csv
+
 ## Technologies
 
 * Spring Boot
